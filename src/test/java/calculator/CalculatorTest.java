@@ -111,5 +111,18 @@ class CalculatorTest {
 
     }
 
+    //Домашняя работа
+    @Test
+    @DisplayName("Проверка скидки")
+    void testCalculateDiscount(){
+        assertEquals(95, calculator.calculateDiscount(100, 5));
+    }
+
+    @Test
+    @DisplayName("Проверка скидки с отрицательными числами")
+    void testCalculateDiscountByNegative() {
+        assertThrows(ArithmeticException.class, () -> calculator.calculateDiscount(100.0, -5));
+    }
+
 }
 
