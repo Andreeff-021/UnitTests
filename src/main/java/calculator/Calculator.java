@@ -22,8 +22,14 @@ public class Calculator {
         }
         return (double) a / b;
     }
-}
 
+    public double calculateDiscount(double price, double sale) {
+       if (price > 0 && sale > 0){
+           return price - price / 100 * sale;
+       }
+       else throw new ArithmeticException("Недопустимы аргумент");
+    }
+}
 
 
 
